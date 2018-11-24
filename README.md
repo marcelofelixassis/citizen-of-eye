@@ -1,4 +1,4 @@
-# Citizen of Eye :fa-eye: :fa-eye:
+# Citizen of Eye
 - Track the expenses of each Member in the year 2017;
 - See which were the most used social networks;
 
@@ -9,14 +9,15 @@
 
 # Usage
 
-######Backend
+Back-end
+
 It is recommended that you use the dump of the database present in the repository, since running the script to popular the database is time consuming, due to the limit of requests imposed by the site http://dadosabertos.almg.gov.br/ws
 
 - If use dump
 	- Create a database and configure it according to the file "backend/knexfile.js"
 	- Import dump to the database ("dump.sql")
 
-			cd backend
+			cd Back-end
 			yarn install
 			cd src
 			node app.js
@@ -24,7 +25,7 @@ It is recommended that you use the dump of the database present in the repositor
 - If use script
 	- Create a database and configure it according to the file "backend/knexfile.js"
 
-			cd backend
+			cd Back-end
 			yarn install
 			knex migrate:latest
 			cd src
@@ -33,7 +34,8 @@ It is recommended that you use the dump of the database present in the repositor
 
 			node app.js
 
-######Frontend
-	cd frontend
-	yarn install
-	yarn start
+Front-end
+
+			cd Front-end
+			yarn install
+			yarn start
