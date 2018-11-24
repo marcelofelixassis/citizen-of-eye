@@ -20,7 +20,7 @@ class CompTable extends Component {
         super(props);
         this.state = {
             month: '',
-            tableBody: Array(),
+            tableBody: [],
         }    
     }
 

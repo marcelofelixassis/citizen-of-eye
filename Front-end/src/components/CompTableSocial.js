@@ -16,7 +16,7 @@ class CompTableSocial extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tableBody: Array(),
+            tableBody: [],
         }
     }
 
