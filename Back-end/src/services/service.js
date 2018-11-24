@@ -1,12 +1,13 @@
-import * as constants from "../utils/constants";
 const axios = require("axios");
 const insert = require("./insert");
+const URL_GET_DEPUTIES = "http://dadosabertos.almg.gov.br/ws/deputados/lista_telefonica";
+const URL_GET_FUNDS = "http://dadosabertos.almg.gov.br/ws/prestacao_contas/verbas_indenizatorias/deputados/";
 
 module.exports = {
 
     GetAllDeputies: async () => {
         try {
-            const response = await axios.get(constants.URL_GET_DEPUTIES, {
+            const response = await axios.get(URL_GET_DEPUTIES, {
                 params: {
                     formato: "json"
                 }
@@ -23,7 +24,7 @@ module.exports = {
         await Promise.all(
             deputiesIds.map(async (id, ind) => {
                 for(let i = 1; i <= 12; i++){
-                    await axios.get(constants.URL_GET_FUNDS+""+id+"/2017/"+i+"?formato=json")
+                    await axios.get(URL_GET_FUNDS+""+id+"/2017/"+i+"?formato=json")
                     .then((response) => {
                         response.data.list.map((element) => {  
                             aux++;
@@ -42,6 +43,5 @@ module.exports = {
                 }
             })
         )
-        console.log("Ready!");
     },
 }
